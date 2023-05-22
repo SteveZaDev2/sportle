@@ -1,10 +1,10 @@
-let protoWordsArray = [
+  let protoWordsArray = [
   { 
     cat: "Temp",
     sel: false,
     parent: "",
     numOfItems: 0,
-    items: ["EMIL JANNINGS"]
+    items: ["AAAAA"]
     },
     { 
       cat: "Teams", 
@@ -13,20 +13,41 @@ let protoWordsArray = [
       numOfItems: 0,
       items: [],
     },
-    {
-      cat: "Baseball",
+        {
+          cat: "Baseball",
+          sel: false,
+          parent: "Teams",
+          numOfItems: 0,
+          items: ["NEW YORK YANKEES"]
+          },
+        {
+          cat: "Football",
+          sel: false,
+          parent: "Teams",
+          numOfItems: 0,
+          items: ["DALLAS COWBOYS"]
+          },
+    { 
+      cat: "HallsOfFame", 
       sel: false,
-      parent: "Teams",
+      parent: "parent",
       numOfItems: 0,
-      items: ["NEW YORK YANKEES"]
-      },
-    {
-      cat: "Football",
-      sel: false,
-      parent: "Teams",
-      numOfItems: 0,
-      items: ["DALLAS COWBOYS"]
-      },
+      items: [],
+    },
+        {
+          cat: "Baseball",
+          sel: false,
+          parent: "HallsOfFame",
+          numOfItems: 0,
+          items: ["BABE RUTH"]
+          },
+        {
+          cat: "Football",
+          sel: false,
+          parent: "HallsOfFame",
+          numOfItems: 0,
+          items: ["ROGER STAUBACH"]
+          },      
     { 
       cat: "Testing",
       sel: true,
@@ -35,11 +56,6 @@ let protoWordsArray = [
       items: ["ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHI"]
       }
 
-  /*,
-  , 
-  ,
-  , 
-  */
 ]
 
 const backgroundImagesPortrait=[
@@ -76,11 +92,11 @@ const audios=[ {name: "default",
               }
              ]
 
-let helpText = `This version of WORDLE, plays like a cross between Wordle and Wheel of Fortune. Instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is US Presidents, but you can select your own by clicking on the 2nd icon from the right. All available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in gray. Click to toggle each category. As in the original WORDLE, stats are provided. Click on the bar-graph icon for a summary, then i, for more info. 
-TIPS - As far as game play goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. (Click the duplicate icon and spaces will be filled in from your current position in the row). Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
-***Solving tip - On especially long wordles, after several guesses have been made, the game board can look quite busy. Click or tap the title 'WORLDLE' and the current row will be filled with all of the letters that you have correctly guessed. This often results in an a-ha moment when the solution jumps out at you. Then backup thru the word via the delete key and then fill in the blanks with your solution. 
---Note - on narrow screens, wordles over 21 letters will be cut off at 21.
-***Customize - You can customize your WORLDLE experience to some degree by selecting the gear shaped icon. 
+let helpText = `SPORTLE plays like a cross between Wordle and Wheel of Fortune. Instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular sports category. The answer can be anywhere from 4 to 20+ characters and can include spaces. All available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in gray. Click to toggle each category. As in the original WORDLE, stats are provided. Click on the bar-graph icon for a summary, then i, for more info. 
+TIPS - As far as game play goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words or names, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. (Click the duplicate icon and spaces will be filled in from your current position in the row). Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
+***Solving tip - On especially long wordles, after several guesses have been made, the game board can look quite busy. Click or tap the title 'SPORTLE' and the current row will be filled with all of the letters that you have correctly guessed. This often results in an a-ha moment when the solution jumps out at you. Then backup thru the word via the delete key and then fill in the blanks with your solution. 
+--Note - on narrow screens, sportles over 21 letters will be cut off at 21.
+***Customize - You can customize your SPORTLE experience to some degree by selecting the gear shaped icon. 
 --Choose your background - The top icon (with 6 little pics inside), will select a random background pic for each session. Below that are 6 photos, choose any one of them and that will be your background. There is also an input field where you can paste a link to any image on the web that you can get a direct link to. Paste in the link, press enter and your background will change. This works well on desktops but is hit or miss on mobile. 
 --If you prefer shorter WORLDLES to solve, you can limit the maximum number of characters to anything 5 and over, the lower you go, available categories will be limited.
 --Set your background audio to any of those listed. You can always turn off your background audio via the audio icon (third from the right.)
@@ -1287,29 +1303,10 @@ function buildResults(){
   const resultsTrayEl = document.getElementById("results-tray")
 
 
-/* 
-// TEMP CODE TO FIND 4 WORD MOVIE THAT STARTS WITH 'TH'
-for (i=0; i<protoWordsArray[4].numOfItems; i++){
-  const myArray = protoWordsArray[4].items[i].split(" ");
-  if (myArray.length != 4){
-    
-  } else {
-
-  if (myArray[0].substring(0,2) === "TH"){
-
-  let resultItemEl = document.createElement('div')
-  resultsTrayEl.appendChild(resultItemEl)
-  resultItemEl.innerText = protoWordsArray[4].items[i]
-  }
-}
-return;
-*/
 
   // LOOP THRU RESULTS IN REVERSE ORDER
 
   let resultItemEl = document.createElement('div')
-//      resultItemEl.innerText = "here are where results will go"
-//  resultsTrayEl.appendChild(resultItemEl)
 
   let resultsArrayTemp = JSON.parse(window.localStorage.getItem('resultsSpo'));
   if (resultsArrayTemp){
@@ -1391,17 +1388,6 @@ return;
 }
 
 function updateCategoriesModal(){
- /* const currentStreak = window.localStorage.getItem("currentStreak");
-  const totalWins = window.localStorage.getItem("totalWins");
-  const totalGames = window.localStorage.getItem("totalGames");
-
-  document.getElementById('total-played').textContent = totalGames;
-  document.getElementById('total-wins').textContent = totalWins;
-  document.getElementById('current-streak').textContent = currentStreak;
-
-  const winPct = Math.round((totalWins / totalGames) * 100) || 0
-  document.getElementById('win-pct').textContent = winPct;
-*/
 
 let categories = document.querySelectorAll(".category")
 for (i=0; i<categories.length; i++){
@@ -1493,6 +1479,12 @@ function initCategoriesModal() {
       category.classList.add("child")
       category.classList.add("child")
       category.classList.add("childTeams")
+      console.log("child")
+    }
+    if (protoWordsArray[i].parent === "HallsOfFame"){
+      category.classList.add("child")
+      category.classList.add("child")
+      category.classList.add("childHallsOfFame")
       console.log("child")
     }
  
@@ -2037,8 +2029,10 @@ function calcLettersandGuesses(){
     }, 4500);
       numofLetters = maxLettersNarrowScreen;
       wordle = wordle.slice(0, maxLettersNarrowScreen);
+      window.localStorage.setItem("wordleSpo", wordle);
     }
   }
+
   console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
  // let guessedWordCount = 0;
   numofGuesses = 6;
@@ -2134,8 +2128,3 @@ function calcLettersandGuesses(){
 
     })
 }
-
-
-
-
-
