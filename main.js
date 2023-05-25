@@ -1,11 +1,5 @@
   let protoWordsArray = [
-  { 
-    cat: "Temp",
-    sel: false,
-    parent: "",
-    numOfItems: 0,
-    items: ["AAAAA"]
-    },
+
     { 
       cat: "Teams", 
       sel: false,
@@ -18,15 +12,36 @@
           sel: false,
           parent: "Teams",
           numOfItems: 0,
-          items: ["NEW YORK YANKEES"]
+          items: ["NEW YORK YANKEES", "BOSTON RED SOX", "BALTIMORE ORIOLES", "TORONTO BLUE JAYS", "TAMPA BAY RAYS", "DETROIT TIGERS", "CLEVELAND GUARDIANS", "CHICAGO WHITE SOX", "MINNESOTA TWINS", "ANAHEIM ANGELS", "SEATTLE MARINERS", "TEXAS RANGERS", "OAKLAND AS", "NEW YORK METS", "WASHINGTON NATIONALS", "HOUSTON ASTROS", "PHILADELPHIA PHILLIES", "MIAMI MARLINS", "CHICAGO CUBS", "ST LOUIS CARDINALS", "PITTSBURGH PIRATES", "MILWAUKEE BREWERS", "LOS ANGELES DODGERS", "SAN FRANCISCO GIANTS", "SAN DIEGO PADRES", "COLORADO ROCKIES"]
           },
         {
           cat: "Football",
           sel: false,
           parent: "Teams",
           numOfItems: 0,
-          items: ["DALLAS COWBOYS"]
+          items: ["ARIZONA CARDINALS", "ATLANTA FALCONS", "BALTIMORE RAVENS", "BUFFALO BILLS", "CHICAGO BEARS", "CINCINNATI BENGALS", "CLEVELAND BROWNS", "DALLAS COWBOYS", "DENVER BRONCOS", "DETROIT LIONS", "GREEN BAY PACKERS", "HOUSTON TEXANS", "INDIANAPOLIS COLTS", "JACKSONVILLE JAGUARS", "KANSAS CITY CHIEFS", "LOS ANGELES CHARGERS", "LOS ANGELES RAMS", "MIAMI DOLPHINS", "MINNESOTA VIKINGS", "NEW ENGLAND PATRIOTS", "NEW ORLEANS SAINTS", "NEW YORK GIANTS", "NEW YORK JETS", "PHILADELPHIA EAGLES", "PITTSBURGH STEELERS", "SEATTLE SEAHAWKS", "TAMPA BAY BUCCANEERS", "TENNESSEE TITANS", "WASHINGTON COMMANDERS"]
           },
+        {
+          cat: "Basketball",
+          sel: false,
+          parent: "Teams",
+          numOfItems: 0,
+          items: ["BOSTON CELTICS"]
+          }, 
+        {
+          cat: "Hockey",
+          sel: false,
+          parent: "Teams",
+          numOfItems: 0,
+          items: ["MONTREAL CANADIENS"]
+          },
+        {
+          cat: "Soccer",
+          sel: false,
+          parent: "Teams",
+          numOfItems: 0,
+          items: ["MANCHESTER UNITED", "REAL MADRID", "MILAN", "BAYERN MUNICH", "LIVERPOOL", "BARCELONA", "MANCHESTER CITY", "INTER MILAN", "JUVENTUS", "CHELSEA", "NOTTINGHAM FOREST", "HAMBURGER SV", "STEAUA BUCURESTI", "BORUSSIA DORTMUND", "ARSENAL"]
+          },       
     { 
       cat: "HallsOfFame", 
       sel: false,
@@ -59,23 +74,19 @@
 ]
 
 const backgroundImagesPortrait=[
- // "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://thumbs.dreamstime.com/b/baseball-ball-picture-air-34653335.jpg",
-  "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg",
-  "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg",
-  "https://images.unsplash.com/photo-1543837173-6c26bc89937b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXV0dW1ufGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1553114836-026cecec9778?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fG5hdHVyZXxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
-//  "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
+  "https://i.pinimg.com/originals/7b/ed/c5/7bedc5e931a102086ca3323e99f1e98f.jpg",
+  "http://publicdomainpictures.net/pictures/100000/velka/golf-course-1410520917hyd.jpg"
+
 ]
 
 const backgroundImagesLandscape=[
   "https://cdn.britannica.com/q:60/53/212553-050-E4A98496/Baseball-bat.jpg",
-  "https://cdn.pixabay.com/photo/2021/01/09/20/23/road-5903402__340.jpg",
-  "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg",
-  "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "https://images.unsplash.com/photo-1566155119454-2b581dd44c59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fHNwcmluZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60"
+  "https://64.media.tumblr.com/a6ae6967be7d77890dc520cf75e6ab39/tumblr_ntldpufoad1t0qqjbo1_1280.jpg",
+  "https://activeforlife.com/content/uploads/2018/07/soccer-ball-2121x1414.jpg",
+  "https://wallpapertag.com/wallpaper/full/c/1/f/959097-free-nhl-hockey-wallpaper-3000x2000.jpg",
+  "https://wallpapercave.com/wp/51fXEyG.jpg",
+  "https://www.quinterogolf.com/wp-content/uploads/2020/03/bkg-hole-4.jpg"
 ]
 
 const audios=[ {name: "default",
@@ -686,7 +697,7 @@ allElements.forEach((element) => {
         window.localStorage.setItem('resultsSpo', JSON.stringify(resultsArray));
       }
 
-      messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
+      messageContainerEl.innerText = (`Sorry, no more guesses. The sportle is ${wordle}`)
       gameActive = false;
       window.localStorage.setItem("currentStreakSpo", 0);
       const audio = new Audio ("./auds/negative.mp3");
