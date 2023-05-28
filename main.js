@@ -89,16 +89,16 @@ const backgroundImagesLandscape=[
   "https://www.quinterogolf.com/wp-content/uploads/2020/03/bkg-hole-4.jpg"
 ]
 
-const audios=[ {name: "default",
-                link: "./auds/bgmusic.mp3",
-                vol: .105
+const audios=[ {name: "Take Me Out",
+                link: "./auds/harpo.m4a",
+                vol: .55
               },
-              {name: "Dream",
-              link: "./auds/dream.mp3",
+              {name: "Champions",
+              link: "./auds/champions.m4a",
               vol: .25
             },
-                {name: "Classical Gas",
-                link: "./auds/classicalgas.m4a",
+                {name: "NFL Films",
+                link: "./auds/nfl1.m4a",
                 vol: .25
               }
              ]
