@@ -308,6 +308,7 @@ button.correct-letter-in-place {
 
 .category{
   cursor: pointer;
+  font-size: 18px;
 }
 
 #categories-modal {
