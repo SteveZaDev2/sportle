@@ -1,4 +1,5 @@
   let protoWordsArray = [
+    
 
     { 
       cat: "Teams", 
@@ -26,14 +27,14 @@
           sel: false,
           parent: "Teams",
           numOfItems: 0,
-          items: ["BOSTON CELTICS"]
+          items: ["BOSTON CELTICS", "PHILADELPHIA SIXERS", "NEW YORK KNICKS", "MIAMI HEAT", "DETROIT PISTONS", "CHICAGO BULLS", "HOUSTON ROCKETS", "DALLAS MAVERICKS", "DENVER NUGGETS", "LOS ANGELES LAKERS", "SACRAMENTO KINGS", "GOLDEN STATE WARRIORS", "PORTLAND TRAILBLAZERS"]
           }, 
         {
           cat: "Hockey",
           sel: false,
           parent: "Teams",
           numOfItems: 0,
-          items: ["MONTREAL CANADIENS"]
+          items: ["MONTREAL CANADIENS", "BOSTON BRUINS", "NEW YORK RANGERS", "NEW YORK ISLANDERS", "NEW JERSEY DEVILS", "TAMPA BAY LIGHTNING", "CHICAGO BLACK HAWKS", "DETROIT RED WINGS", "TORONTO MAPLE LEAFS", "VANCOUVER CANUKS"]
           },
         {
           cat: "Soccer",
@@ -54,7 +55,7 @@
           sel: false,
           parent: "HallsOfFame",
           numOfItems: 0,
-          items: ["BABE RUTH"]
+          items: ["BABE RUTH", "TY COBB", "WALTER JOHNSON", "CHRISTY MATHEWSON", "HONUS WAGNER"]
           },
         {
           cat: "Football",
@@ -63,12 +64,33 @@
           numOfItems: 0,
           items: ["ROGER STAUBACH"]
           },      
+        {
+          cat: "Basketball",
+          sel: false,
+          parent: "HallsOfFame",
+          numOfItems: 0,
+          items: ["BILL RUSSELL", "KAREEM ABDUL JABBAR", "RAY ALLEN", "TINY ARCHIBALD", "PAUL ARIZIN", "CHARLES BARKLEY", "RICK BARRY", "ELGIN BAYLOR", "DAVE BING", "LARRY BIRD", "CHRIS BOSH", "CARL BRAUN", "KOBE BRYANT", "WILT CHAMBERLAIN", "MAURICE CHEEKS", "BOB COUSY", "DAVE COWENS", "BILLY CUNNINGHAM", "ADRIAN DANTLEY", "BOB DAVIES", "DAVE DEBUSSHERE", "CLYDE DREXLER", "JOE DUMARS", "TIM DUNCAN", "ALEX ENGLISH", "JULIUS ERVING", "PATRICK EWING", "WALT FRAZIER", "JOE FULKS", "HARRY GALLATIN", "KEVIN GARNETT", "GEORGE GERVIN", "ARTIS GILMORE", "MANU GINOBLI", "TOM GOLA", "HAL GREER", "RICHIE GUERIN", "CLIFF HAGAN", "TIM HARDAWAY", "JOHN HAVLICEK", "CONNIE HAWKINS", "ELVIN HAYES", "TOM HEINSOHN", "GRANT HILL", "LOU HUDSON", "DAN ISSEL", "ALAN IVERSON", "DENNIS JOHNSON", "GUS JOHNSON", "MAGIC JOHNSON", "SAM JONES", "MICHAEL JORDAN", "JASON KIDD", "BERNARD KING", "BOB LANIER", "JERRY LUCAS", "KARL MALONE", "MOSES MALONE", "PETE MARAVICH", "SLATER MARTIN", "BOB MCADOO", "GEORGE MCGINNIS", "TRACY MCGRADY", "KEVIN MCHALE", "GEORGE MIKAN", "REGGIE MILLER", "YAO MING", "SIDNEY MONCRIEF", "EARL MONROE", "ALONZO MOURNING", "CHRIS MULLIN", "CALVIN MURPHY", "STEVE NASH", "SHAQUILLE ONEAL", "HAKEEM OLAJUWON", "BOB PETTIT", "PAUL PIERCE", "SCOTTIE PIPPEN", "DINO RADJA", "WILLIS REED", "OSCAR ROBERTSON", "DAVID ROBINSON", "GUY RODGERS", "DENNIS RODMAN", "DOLPH SHAYES", "BILL SHARMAN", "JACK SIKMAN", "JOHN STOCKTON", "MAURICE STOKES", "ISIAH THOMAS", "DAVID THOMPSON", "NATE THURMOND", "JACK TWYMAN", "WES UNSELD", "CHET WALKER", "BEN WALLACE", "BILL WALTON", "CHRIS WEBBER", "JERRY WEST", "PAUL WESTPHAL", "JO JO WHITE", "LENNY WILKENS", "DOMINIQUE WILKINS", "JAMES WORTHY"]
+        }, 
+        {
+          cat: "Soccer",
+          sel: false,
+          parent: "HallsOfFame",
+          numOfItems: 0,
+          items: ["PELE", "GEORGE BEST", "BOBBY CHARLTON", "JOHAN CRUYFF", "BOBBY MOORE", "FERENC PUSKAS", "GORDON BANKS", "MARCO VAN BASTEN", "FRANZ BECKENBAUER", "JOHN CHARLES", "KENNY DALGLISH", "DUNCAN EDWARDS", "EUSEBIO", "TOM FINNEY", "GARRINCHA", "JAIRZINHO", "STANLEY MATTHEWS", "GERD MULLER", "MICHEL PLATINI", "ROBERTO RIVELINO", "ALFREDO DI STEFANO", "LEV YASHIN", "BILLY WRIGHT", "ZICO", "DINO ZOFF", "LUKA MODRIC", "JOHN CHARLES", "HUGO SANCHEZ", "OMAR SIVORI", "PAOLO ROSSI", "PAUL BREITNER", "GEORGE WEAH", "GUNNAR NORDAHL", "KEVIN KEEGAN", "HRISTO STOICHKOV", "GIANLUIGI BUFFON", "JOHAN NEESKENS", "XAVI HERNANDEZ", "LUIS SUAREZ", "KARL HEINZ RUMMENIGGE", "ANDRES INIESTA", "SOCRATES", "SANDOR KOCSIS", "LOTHAR MATTHAUS", "RONALDINHO", "RUUD GULLIT", "GIUSEPPE MEAZZA", "RAYMOND KOPA", "ROMARIO", "FRANCO BARESI", "CRISTIANO RONALDO", "FERENC PUSKAS", "PAOLO MALDINI", "MANE GARRINCHA", "ROBERTO BAGGIO", "RONALDO", "ZINEDINE ZIDANE", "LIONEL MESSI", "DIEGO MARADONA"]
+          },    
+          {
+            cat: "Hockey",
+            sel: false,
+            parent: "HallsOfFame",
+            numOfItems: 0,
+            items: ["GORDIE HOWE"]
+            },                    
     { 
       cat: "Testing",
       sel: true,
       parent: "",
       numOfItems: 0,
-      items: ["ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHI"]
+      items: ["ABCDEFGHIJKLMN"]
       }
 
 ]
@@ -922,7 +944,7 @@ function initMisc(){
         showSpacesForFree();
       } else {
 
-      for (i=1; i<maxCharacters; i++){
+      for (i=1; i<maxCharacters+1; i++){
         updateGuessedLetters(' ');
       }
       console.log("done with loop of spaces");

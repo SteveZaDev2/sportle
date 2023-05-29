@@ -508,7 +508,7 @@ hr{
 #results-tray{
   display: grid;
   grid-template-columns: 5fr 18fr 1fr;
-  font-size: .9rem;
+  font-size: .75rem;
 }
 
 #delete-stats{
