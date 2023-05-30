@@ -139,6 +139,7 @@ TIPS - As far as game play goes, here a few differences from the original and so
 ----------------
 `
 
+let viewHelpText = `Thanks for playing SPORTLE. Please view the Help "?" icon for useful tips and hints `
 
 let sound = true;
 let soundPlayer = "";
@@ -202,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initPreferencesModal();
     initCategories();
     initHelpModal();
+    initViewHelpModal();
     initStatsModal();
     initCategoriesModal();
     initCategoriesModalBtn();
@@ -1214,6 +1216,7 @@ function initHelpModal() {
     helpEl.innerText = helpText + "\n" + "\n"
     const audio = new Audio ("./auds/stats.mp3");
     audio.play()
+    window.localStorage.setItem('viewedhelpSpo', "viewed");
  //   helpEl.requestFullscreen();
   });
 
@@ -1229,6 +1232,45 @@ function initHelpModal() {
     }
   });
 }
+
+
+
+function initViewHelpModal() {
+  const modal = document.getElementById("view-help-modal");
+
+  // Get the <span> element that closes the modal
+  const span = document.getElementById("close-view-help");
+
+
+  // Open the modal if the user has not read the help
+    if (!window.localStorage.getItem("viewedhelpSpo")){
+      modal.style.display = "block";
+      console.log("initViewHelpModal")
+      viewHelpEl = document.getElementById("view-help")
+      viewHelpEl.innerHTML = viewHelpText
+    } else {
+      return;
+    }
+  //  const audio = new Audio ("./auds/stats.mp3");
+  //  audio.play()
+
+
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+
+
+
 
 function updateStatsModal(){
   const currentStreak = window.localStorage.getItem("currentStreakSpo");
