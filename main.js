@@ -90,7 +90,7 @@
       sel: true,
       parent: "",
       numOfItems: 0,
-      items: ["ABCDEFGHIJKLMN"]
+      items: ["ABCDEFGHIJKLMN", "AB"]
       }
 
 ]
@@ -669,7 +669,7 @@ allElements.forEach((element) => {
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
       gameActive = false;
-      const audio = new Audio ("./auds/success.mp3");
+      const audio = new Audio ("./auds/batcrack.m4a");
       audio.play()
       danceTiles(currentWordArr, firstLetterId);
       resultObj.guesses = guessedWordCount;
@@ -739,7 +739,7 @@ allElements.forEach((element) => {
       return;
     } 
 
-    const audio = new Audio ("./auds/ascending.mp3");
+    const audio = new Audio ("./auds/organ.m4aascending.mp3");
     audio.play()
     guess.forEach(guess => {
       console.log("letter = " + guess.letter + " color = " + guess.color)
