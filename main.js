@@ -739,7 +739,7 @@ allElements.forEach((element) => {
       return;
     } 
 
-    const audio = new Audio ("./auds/organ.m4aascending.mp3");
+    const audio = new Audio ("./auds/organ.m4a");
     audio.play()
     guess.forEach(guess => {
       console.log("letter = " + guess.letter + " color = " + guess.color)
